@@ -342,9 +342,9 @@ def render_trials(df_trials, annotator, phase):
             pd.DataFrame(st.session_state.history_phase1).to_csv(file_path, index=False)
             github_file = f"{st.secrets['GITHUB_RESULTS_PATH']}{annotator}_responses_phase1.csv"
             seed_file = save_seed_to_file(annotator, 1, st.session_state.phase1_seed)
-            upload_to_github(file_path, github_file)
+            # upload_to_github(file_path, github_file)
             github_path = f"{st.secrets['GITHUB_RESULTS_PATH']}{annotator}_seed_phase{phase}.txt"
-            upload_to_github(seed_file, github_path)
+            # upload_to_github(seed_file, github_path)
 
             st.session_state.phase = "transition_phase"
             st.session_state.i = 0
@@ -356,9 +356,9 @@ def render_trials(df_trials, annotator, phase):
             github_file = f"{st.secrets['GITHUB_RESULTS_PATH']}{annotator}_responses_phase2.csv"
             seed_file = save_seed_to_file(annotator, 2, st.session_state.phase2_seed)
 
-            upload_to_github(file_path, github_file)
+            # upload_to_github(file_path, github_file)
             github_path = f"{st.secrets['GITHUB_RESULTS_PATH']}{annotator}_seed_phase{phase}.txt"
-            upload_to_github(seed_file, github_path)
+            # upload_to_github(seed_file, github_path)
 
             st.success("✅ Phase 2 complete! You’ve finished all evaluations. Thank you!")
         st.stop()
